@@ -1,0 +1,44 @@
+DROP TABLE funcionarios;
+CREATE TABLE funcionarios (
+	id    	  SERIAL	  	PRIMARY KEY,
+	matricula VARCHAR (10),
+	nome      VARCHAR (255),
+	sobrenome VARCHAR (255)
+);
+
+INSERT INTO funcionarios(
+	matricula,
+	nome,
+	sobrenome
+)
+VALUES (
+	'M0012',
+	'Elem',
+	'Domingos'
+);
+
+--< Ordenando pesquisas >--
+SELECT *
+  FROM funcionarios
+ ORDER BY nome, sobrenome;      			--> VAI ORDENAR EM ORDEM ALFABETICA OU CRESCENTE.
+  
+SELECT *
+  FROM funcionarios
+ ORDER BY nome DESC;			--> VAI ORDENAR EM ORDEM DECRESCENTE.
+  
+SELECT *
+  FROM funcionarios
+ ORDER BY nome, matricula; 		--> VAI ORDENAR DOIS CAMPOS NOME E MATRICULA.
+  
+SELECT *
+  FROM funcionarios
+ ORDER BY nome, matricula DESC;	--> VAI ORDENAR O NOME DE FORMA CRESCENTE, E A MATRICULA DECERSCENTE.
+ 
+SELECT *
+  FROM funcionarios
+ ORDER BY 3, 4, 2;					--> QUERO ORDEM CRESCENTE POR SOBRENOME QUE ESTA NA POSIÇÃO 4 
+ 
+SELECT *
+  FROM funcionarios
+ ORDER BY 4 DESC, nome DESC, 2 ASC;
+ 
